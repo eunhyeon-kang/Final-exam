@@ -16,9 +16,9 @@ def add_plan():
     date = input("날짜를 입력하세요 (ex) 2001.03.15 : ")
     subject = input("공부 할 과목을 입력하세요: ")
     study_plan.append({"날짜": date, "과목": subject})
-    print("공부 할 과목이 추가되었습니당당")
+    print("공부 할 과목이 추가되었습니당")
 
-# 공부 할 과목목 표시 함수 입니다.
+# 공부 할 과목 표시 함수 입니다.
 def view_plans():
     if not study_plan:
         print("공부 할 과목이 없으니, 자유롭게 쉬세요~~ ")
@@ -33,7 +33,7 @@ def view_plans():
 def delete_plan():
     view_plans()
     if study_plan:
-        index = input("삭제 할 과목 번호를 입력하세여여: ")
+        index = input("삭제 할 과목 번호를 입력하세여: ")
         if index.isdigit():
             index = int(index) - 1
             if 0 <= index < len(study_plan):
@@ -43,13 +43,13 @@ def delete_plan():
             else:
                 print("오류요")
         else:
-            print("숫자를 선택해주세여여.")
+            print("숫자를 선택해주세여.")
 
 # 메인 함수로써 프로그램 실행시 보여질 메뉴의 내용입니다.
 def main():
     while True:
         show_menu()
-        menu = input("1~4번 중 원하는 메뉴를 입력하세용용: ")
+        menu = input("1~4번 중 원하는 메뉴를 입력하세요요: ")
         if menu == "1":
             add_plan()
         elif menu == "2":
@@ -57,10 +57,10 @@ def main():
         elif menu == "3":
             delete_plan()
         elif menu == "4":
-            print("종료료")
+            print("종료")
             break
         else:
-            print("오류, 다시 입력하쇼쇼")
+            print("오류, 다시 입력하세요요")
 
 if __name__ == "__main__":
     main()
