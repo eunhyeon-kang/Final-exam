@@ -12,17 +12,19 @@ def show_menu():
 # 공부 일정 추가 함수입니다.
 # 언제까지 이 과목을 끝내야하는지에 대한 데드라인 추가하였습니다.
 # 과목별 중요도를 나타내는 항목을 추가하였습니다.
+# 각 과목별 복습 횟수 항목을 추가하였습니다.
 def add_plan():
     date = input("날짜를 입력하세요 (ex) 2001.03.15 : ")
-    subject = input("공부 할 과목을 입력하세요: ")
-    deadline = input("언제까지 이 과목을 끝내야 하는지 입력하세요 (ex) 2024.12.03 : ")
-    importnat = input("중요도를 입력하세요 (중요, 보통, 낮음): ")
+    subject = input("공부 할 과목들을 입력하세요: ")
+    deadline = input("언제까지 이 과목을 끝내야 하는지 입력하세요 (ex) 2024.12.03 : ") 
+    importnat = input("중요도를 입력하세요 (중요, 보통, 낮음): ") # 중요도를 중요 보통 낮음으로 나타내었습니다.
     while importnat not in ['중요', '보통', '낮음']:  
         print("오류. '중요', '보통', '낮음' 중 하나를 입력해주세요.")
-        improtnant = input("중요도를 입력하세요 (중요, 보통, 낮음): ")
-    
+        improtnant = input("중요도를 입력하세요 (중요, 보통, 낮음): ") 
+    # 복습 횟수 입력입니당.
+    review = input("복습 횟수를 입력하세요: ")
     # 과목 추가 함수압니당.
-    study_plan.append({"날짜": date, "과목": subject, "완료일": deadline, "중요도": importnat})
+    study_plan.append({"날짜": date, "과목": subject, "완료일": deadline, "중요도": importnat, "복습 횟수": review})
     print("공부 할 과목이 추가되었습니다.")
 
 # 공부 할 과목 표시 함수입니다.
@@ -33,7 +35,7 @@ def view_plans():
         print("\n공부 할 과목:")
         index = 1
         for plan in study_plan:
-            print(f"{index}. {plan['날짜']} - {plan['과목']} (완료일: {plan['완료일']}, 중요도: {plan['중요도']})")
+            print(f"{index}. {plan['날짜']} - {plan['과목']} (완료일: {plan['완료일']}, 중요도: {plan['중요도']}, 복습 횟수: {plan['복습 횟수']})")
             index += 1
 
 # 과목 삭제 함수입니다.
